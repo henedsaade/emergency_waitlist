@@ -69,3 +69,27 @@ newPatientForm.addEventListener('submit', event => {
     alert(`New patient added: ${patientName} (Severity: ${severity})`);
     newPatientForm.reset(); // Clear the form fields after successful submission
 });
+
+// Function to handle sign-in
+function signIn(username, role) {
+    console.log('Sign-in as:', { username, role });
+    if (role === 'admin') {
+        document.getElementById('admin-panel').style.display = 'block';
+    } else if (role === 'patient') {
+        // Filter patient queue for the signed-in patient
+        const signedInPatient = patients.find(patient => patient.name === username);
+        if (signedInPatient) {
+            alert(`Welcome, ${username}! Your queue number is ${patients.indexOf(signedInPatient) + 1} and the estimated wait time is ${signedInPatient.waitTime}.`);
+        } else {
+            alert(`No patient found with name ${username}.`);
+        }
+    }
+}
+
+// Event listener for the sign-in form submission
+document.getElementById('sign-in-form').addEventListener('submit', event => {
+    event.preventDefault();
+    const username = event.target.elements.username.value;
+    const role = event.target.elements.role.value;
+    signIn(username, role);
+});
