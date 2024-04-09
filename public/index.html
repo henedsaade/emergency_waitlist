@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Triage Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Admin Panel -->
+    <section id="admin-panel">
+        <h2>Admin Panel</h2>
+        <form id="new-patient-form">
+            <label for="name">Patient Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="severity">Severity:</label>
+            <select id="severity" name="severity" required>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            
+            <button type="submit">Add Patient</button>
+        </form>
+    </section>
+
+    <!-- User Panel -->
+    <section id="user-panel">
+        <h2>Patients in Queue</h2>
+        <!-- Placeholder for displaying patients -->
+        <ul id="patient-list">
+            <li>Loading patients...</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hospital Triage Application</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
