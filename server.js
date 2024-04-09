@@ -18,14 +18,11 @@ app.post('/api/patients', (req, res) => {
     const waitTime = calculateWaitTime(severity); // Calculate wait time based on severity
     const newPatient = { name, waitTime };
     patients.push(newPatient);
-    console.log('Added new patient:', newPatient); // Log the added patient
-    console.log('Current patients:', patients); // Log the current list of patients
     res.status(201).json(newPatient);
 });
 
 // Route to fetch patients
 app.get('/api/patients', (req, res) => {
-    console.log('Sending patients:', patients); // Log the patients being sent
     res.json(patients);
 });
 
@@ -41,7 +38,7 @@ app.post('/api/login', (req, res) => {
 
 // Function to calculate wait time based on severity
 function calculateWaitTime(severity) {
-    // Placeholder logic to calculate wait time
+    // calculate wait time
     if (severity === 'Low') {
         return '30 mins';
     } else if (severity === 'Medium') {

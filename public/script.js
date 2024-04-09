@@ -25,7 +25,6 @@ window.addEventListener('load', () => {
 // Function to fetch patient data from the server (simulated)
 function fetchPatients() {
     // Simulate fetching patient data from the server
-    // You can replace this with an actual AJAX request to your server
     setTimeout(() => {
         // Update the patients array with fetched data
         patients = [
@@ -39,8 +38,7 @@ function fetchPatients() {
 
 // Function to calculate wait time based on severity
 function calculateWaitTime(severity) {
-    // Placeholder logic to calculate wait time
-    // You can replace this with your actual logic to estimate wait time based on severity
+    // calculate wait time
     if (severity === 'Low') {
         return '30 mins';
     } else if (severity === 'Medium') {
@@ -60,8 +58,6 @@ newPatientForm.addEventListener('submit', event => {
     const patientName = formData.get('name');
     const severity = formData.get('severity');
 
-    // Simulate adding a new patient (replace this with actual server-side logic)
-    // Instead of 'Estimated time', calculate wait time based on severity
     const waitTime = calculateWaitTime(severity);
     const newPatient = { name: patientName, waitTime: waitTime };
     patients.push(newPatient); // Add the new patient to the patients array
